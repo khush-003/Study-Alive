@@ -23,6 +23,7 @@ import { apiRateLimiter } from './middleware/rateLimiters.js';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
 
 const app = express();
+app.set('trust proxy', 1);
 const allowedOrigins = new Set([
   config.clientUrl,
   'http://localhost:5173',
