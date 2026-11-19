@@ -47,6 +47,14 @@ app.use(morgan(config.environment === 'production' ? 'combined' : 'dev'));
 app.use(express.json({ limit: '1mb' }));
 app.use('/api', apiRateLimiter);
 
+// Root route to confirm that the API is running.
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Skill2Career API is running successfully',
+  });
+});
+
 // Register health and feature routes before the not-found and error middleware.
 app.use('/api/health', healthRoutes);
 app.use('/api/ai', aiRoutes);
