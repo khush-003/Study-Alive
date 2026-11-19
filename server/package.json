@@ -8,7 +8,7 @@
     "dev": "nodemon src/server.js"
   },
   "engines": {
-    "node": ">=18"
+    "node": "24.x"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
